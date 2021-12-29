@@ -47,6 +47,8 @@ def insert_position():
     insert_position()
 
 def update_board(position):
+  """ update_board function translates the position inserted by the user (1-9) to an index for the 
+  2 x 2 tic_tac_toe board and retuns the position as a tuple to board_index_1 and board_index_2 """
   if position == 1:
     return (0,0)
   elif position == 2:
@@ -68,6 +70,9 @@ def update_board(position):
     
 
 def is_game_won(tic_tac_toe, symbol):
+  """ is_game_won checks if any of the players got won, called twice after each players game 
+  and alters the flow of the programme if the game has been won  """
+  
   if (tic_tac_toe[0][0] ==  tic_tac_toe[0][1] == tic_tac_toe[0][2] == symbol or 
   tic_tac_toe[1][0] ==  tic_tac_toe[1][1] == tic_tac_toe[1][2] == symbol or 
   tic_tac_toe[2][0] ==  tic_tac_toe[2][1] == tic_tac_toe[2][2] == symbol or
