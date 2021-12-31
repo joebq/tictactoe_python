@@ -82,7 +82,6 @@ def is_game_won(tic_tac_toe, symbol):
   tic_tac_toe[0][0] ==  tic_tac_toe[1][1] == tic_tac_toe[2][2] == symbol or
   tic_tac_toe[0][2] ==  tic_tac_toe[1][1] == tic_tac_toe[2][0] == symbol ) :
    return True
-  pass
   
 
 def main():
@@ -102,7 +101,6 @@ def main():
   board_index_2 = 0
   
 
-  tic_tac_toe = [[' ',' ', ' '], [' ',' ',' '], [' ',' ',' ']]
   symbols = ('O', 'X')
   #--------------------#
 
@@ -114,11 +112,13 @@ def main():
                                                         player_two_symbol
                                                         )
 
-  # print(player_one_symbol, player_two_symbol)
-  board_display(tic_tac_toe)
   
   while play_game == 'Y':
     number_of_play = 0
+    game_won = False
+    tic_tac_toe = [[' ',' ', ' '], [' ',' ',' '], [' ',' ',' ']]
+    # print(player_one_symbol, player_two_symbol)
+    board_display(tic_tac_toe)
     while game_won != True and number_of_play != 8:
       print("player one turn")
       position = insert_position()
@@ -142,7 +142,7 @@ def main():
       if game_won:
         print("Player One Wins!\n")
         break
-    play_game = (input("Want to play again? (Y/N): ")).upper()
+    play_game = input("Want to play again? (Y/N): ").upper()
   
 
 if __name__ == '__main__':
